@@ -1,27 +1,29 @@
-# Overview
-This Solidity contract, named "RebelToken", manages a token ecosystem on Ethereum. It incorporates ERC20 token standards with additional functionalities like token burning (ERC20Burnable) and owner control (Ownable). Users can request tokens via buyRebel() and have them minted by the owner using mintTokens(). Tokens can be transferred (transferRebel()), redeemed for tiered memberships (redeemTier()), burned (burnTokens()), and users can check their balances (checkBalance()). The contract tracks user data and tier levels through structs and mappings, facilitating structured token management and interaction.
+# Summary
+The "RebelToken" Solidity contract oversees an Ethereum token ecosystem. Along with other features like owner control (Ownable) and token burning (ERC20Burnable), it integrates the ERC20 token specifications. By using buyRebel(), users can request tokens, and by using mintTokens(), they can have the owner mint them. Users can check their balances (checkBalance()), burn tokens (burnTokens()), redeem tokens for tiered memberships (redeemTier()) and transfer tokens (transferRebel()). Through structs and mappings, the contract keeps track of user information and tier levels, enabling organised token management and communication.
 
 # Initiation
-## Implementation plan
-To run this code, first go to https://faucets.chain.link/ and claim free fuji testnet avax faucet using login via github. Now Head towards remixIDE or hardhat as per your intrest, in this project remix was used for its ease. create a new MyContract.sol file and copy the content of DegenToken.sol into it. In left side go to compile tab and choose the compatible compiler. Then in deploy section choose injection wallet (metamast, phantom, etc.). click Deploy and confirm the transaction.
+## Plan of implementation
+In order to use this code, first log in to github and visit https://faucets.chain.link/ to claim a free Fuji testnet avax faucet. Right now Remix was used in this project for convenience of usage; go towards RemixIDE or Hardhat, depending on your interest. Copy the contents of DegenToken.sol into a new file called MyContract.sol. Navigate to the Compile tab on the left and select the appropriate compiler. Next, select the injection wallet (metamast, phantom, etc.) in the deploy section. To confirm the purchase, click Deploy.
 
-# Steps
+# Actions
 
-1. Create the "RebelToken" contract, establishing the "Rebel" (RBL) token with ownership privileges.
+1. Establish the "Rebel" (RBL) token with ownership rights by creating the "RebelToken" contract.
 
-2. Users initiate token requests with buyRebel, specifying the amount.
+2. Users use buyRebel to start token requests and specify the quantity.
 
-3. The owner executes mintTokens to mint tokens for queued users.
+3. To mint tokens for users who are in wait, the owner uses mintTokens.
 
-4. Tokens can be transferred via transferRebel.
+4. TransferRebel is a tool for transferring tokens.
 
-5. Users upgrade membership tiers using redeemTier, burning tokens based on tier levels.
+5. Using redeemTier, users upgrade their membership tiers and burn tokens according to tier levels.
 
-6. Check token balances with checkBalance.
+6. Use checkBalance to verify token balances.
 
-# Interaction with contract
 
-Users interact with the RebelToken contract by buying tokens via buyRebel() and having them minted by the owner with mintTokens(). They can transfer tokens using transferRebel(), redeem tier levels (redeemTier()) by burning specific token amounts, and check their balance via checkBalance(). Owners manage token burning with burnTokens() and minting privileges.
+# Interacton with the contract
+
+Through buyRebel() and mintTokens(), users can purchase tokens from the owner and engage with the RebelToken contract. They can use transferRebel() to move tokens, redeemTier() to reach higher tiers by burning designated token quantities, and checkBalance() to see how much money they have left. Owners control minting privileges and token burning with burnTokens().
+
 
 # Writer
 
