@@ -5,15 +5,15 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 
-contract RebelToken is ERC20, Ownable, ERC20Burnable {
+contract DegenToken is ERC20, Ownable, ERC20Burnable {
 
-    constructor() ERC20("Rebel", "RBL") Ownable(msg.sender) {}
+    constructor() ERC20("Degen", "DGN") Ownable(msg.sender) {}
 
     // Enum for tiered membership levels
     enum TierLevel { Fundamental, Regular, Superior, Prestigious, Supreme }
 
     // Structs to store user and tier data
-    struct User {
+    struct Player {
         address addr;
         uint256 amount;
     }
@@ -27,15 +27,15 @@ contract RebelToken is ERC20, Ownable, ERC20Burnable {
     }
 
     // Arrays to store users and tiers (if needed in the future)
-    User[] public userQueue;
+    Player[] public userQueue;
     UserTiers[] public tierList;
 
     // Mappings to track redeemed tiers
     mapping(address => UserTiers) public userTierMapping;
 
     // Function to add users to the purchase queue
-    function buyRebel(address _addr, uint256 _amount) public {
-        userQueue.push(User({ addr: _addr, amount: _amount }));
+    function buyDegen(address _addr, uint256 _amount) public {
+        userQueue.push(Player({ addr: _addr, amount: _amount }));
     }
 
     // Function to mint tokens for all users in the queue
@@ -50,7 +50,7 @@ contract RebelToken is ERC20, Ownable, ERC20Burnable {
     }
 
     // Function to transfer tokens to another user
-    function transferRebel(address _to, uint256 _amount) public {
+    function transferDegen(address _to, uint256 _amount) public {
         require(_amount <= balanceOf(msg.sender), "Tokens are insifficient");
         _transfer(msg.sender, _to, _amount);
     }
