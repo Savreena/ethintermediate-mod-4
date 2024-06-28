@@ -1,5 +1,5 @@
 # Summary
-The "RebelToken" Solidity contract oversees an Ethereum token ecosystem. Along with other features like owner control (Ownable) and token burning (ERC20Burnable), it integrates the ERC20 token specifications. By using buyRebel(), users can request tokens, and by using mintTokens(), they can have the owner mint them. Users can check their balances (checkBalance()), burn tokens (burnTokens()), redeem tokens for tiered memberships (redeemTier()) and transfer tokens (transferRebel()). Through structs and mappings, the contract keeps track of user information and tier levels, enabling organised token management and communication.
+The computer language Solidity, which is used to create smart contracts on the Ethereum network, is used to write this contract. First, we imported three libraries into the smart contract: ERC20, Ownable, and ERC@)Burnable. An ERC20 token with extra features for token burning and membership tiers is called the DegenToken contract. In order to be added to the owner's minting queue, players must acquire tokens. Users can perform balance checks, transfer tokens, and burn precise sums of tokens to redeem them for different membership levels. In order to manage gas, the contract also permits the owner to burn tokens from any address.
 
 # Initiation
 ## Plan of implementation
@@ -7,22 +7,17 @@ In order to use this code, first log in to github and visit https://faucets.chai
 
 # Actions
 
-1. Establish the "Rebel" (RBL) token with ownership rights by creating the "RebelToken" contract.
-
-2. Users use buyRebel to start token requests and specify the quantity.
-
-3. To mint tokens for users who are in wait, the owner uses mintTokens.
-
-4. TransferRebel is a tool for transferring tokens.
-
-5. Using redeemTier, users upgrade their membership tiers and burn tokens according to tier levels.
-
-6. Use checkBalance to verify token balances.
+1. Establish the DegenToken contract, which designates the contract owner and configures the "Degen" (DGN) token.
+2. By contacting buyDegen and indicating how many tokens they would like, users can request tokens.
+3. For all participants waiting in queue, the owner calls mintToken to mint tokens.
+4. With transferDegen, users can send tokens to other users.
+5. By invoking redeemMembership and burning the required tokens, users swap tokens for membership levels.
+6. Calling checkBalance allows users to view their token balance.
 
 
 # Interacton with the contract
 
-Through buyRebel() and mintTokens(), users can purchase tokens from the owner and engage with the RebelToken contract. They can use transferRebel() to move tokens, redeemTier() to reach higher tiers by burning designated token quantities, and checkBalance() to see how much money they have left. Owners control minting privileges and token burning with burnTokens().
+As the player uses buyDegen() to request a token. The player will now be added to the queue. Call mintToken() from the owner account after that. Token will be minted as a result. To check the balance, switch to the player account and use checkBalance(). You can now exchange tokens for cards depending on their rarity by passing (0,1,2,3,4) for cards that are either bronze, silver, gold, platinum, or diamond. You can also use transferDegen() to send tokens to another player's account or burnDegen() to destroy tokens that you no longer need.
 
 
 # Writer
